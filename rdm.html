@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>GTCoding</title>
+</head>
+
+<body>
+  <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="attendance.html">Login</a>
+            </li>
+            <li>
+                <a href="#">Content Sharing</a>
+            </li>
+            <li>
+                <a href="project.html">Projects</a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search Here">
+            </li>
+        </ul>
+    </div>
+    <nav>
+        <div id="logo-img">
+            <a href="#">
+                <img src="img/logo.png" alt="MIT Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="attendance.html">Login</a>
+            </li>
+            <li>
+                <a href="project.html">Projects</a>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+  <main>
+
+    <h2 class="page-heading">Blog Post Heading</h2>
+    <div id="post-container">
+      <section id="blogpost">
+        <div class="card">
+          <div class="card-meta-blogpost">
+            <a href="#"></a>
+          </div>
+          <div class="card-description">
+            <h3>The Introduction</h3>
+            
+            <p>Coding standards are a set of guidelines, best practices, programming styles and conventions that developers adhere to when writing source code for a project. All big software companies have them. Here are few guidelines from the ‘Linux kernel coding style’:</p>
+<ul>
+<ol>a. Tabs are 8 characters, and thus indentations are also 8 characters.</ol>
+
+<ol>b. The limit on the length of lines is 80 columns and this is a strongly preferred limit.</ol>
+
+<ol>c. The preferred form for allocating a zeroed array is the following:</ol>
+</ul>
+<p>p = kcalloc(n, sizeof(...), ...);</p>
+<p>Both forms check for overflow on the allocation size n * sizeof(…), and return NULL if that occurred.</p>
+
+<p>Recently, I came across a blog post from Richard Rodger. In ‘Why I Have Given Up on Coding Standards’, he writes:</p>
+
+<p>Every developer knows you should have a one, exact, coding standard in your company. Every developer also knows you have to fight to get your rules into the company standard. Every developer secretly despairs when starting a new job, afraid of the crazy coding standard some power-mad architect has dictated.</p>
+
+<p>It’s better to throw coding standards out and allow free expression. The small win you get from increased conformity does not move the needle. Coding standards are technical ass-covering.</p>
+
+<p>Oh boy. While I disagree with Richard that coding standards should be abandoned, I share his pain. I briefly worked with a nut job of a “senior developer” who came in as the lead for a project we’d been working on for 6 months. He was an academic who had just finished his PhD and had little experience working on real world projects. He spent first couple of weeks writing “coding standards” in total isolation like he was some kind of a God and we were lowly beings who just weren’t good enough. His coding standards document was full of his personal opinions and promoted some insane form of coding style. The control freak demanded that we update the source code we had already written to reflect his standards. I have never witnessed team morale hit rock bottom so fast. Needless to say, I had a very brief stay at that job.</p>
+
+<p>Another example that I can think of: a manager who insisted on being part of every major code review. During the reviews, he would flag formatting issues, that were almost always a matter of his own preference, as “errors”. The worst part of the story is that he hadn’t written down his coding standards anywhere! I guess he thought developers would learn his style through osmosis. Sometimes, it felt as if he made up rules on the fly. As I mentioned in my post on conducting effective code reviews, it is useless arguing over formatting issues if you don’t have coding standards.</p>
+
+<p>The point is that coding standards are often misunderstood by naive managers and control freaks who misuse them in one way or the other such that it achieves nothing (no one follows them) or causes friction within the team and hurts morale. Many software developers become bitter and start hating coding standards. Coding standards aren’t the problem. Like any other tool, they become harmful when used incorrectly or in the wrong hands. Coding standards that suck have the following attributes:</p>
+<ul>
+<li>full of author’s own opinions and personal coding style. Coding standards are not personal agendas.</li>
+<li>huge focus on style and formatting issues and is often vague.</li>
+<li>recommendations disguised as standards. I have made this mistake. Standards must be treated like rules and hence must be enforceable.</li>
+</ul>
+<p>Good software developers and architects understand that coding style is very personal varies from individual to individual. They write coding standards that respect developers’ freedom and allow them to express themselves. They do not attempt to mechanize the whole process, rather they focus on a few well-known practices that are widely accepted or plain common sense. And before any standard is put into practice, they get buy-in from the team, if the team wasn’t already involved in formulating the standards. Here are few examples of good coding standards related to formatting:</p>
+<ul>
+<li>No more than one statement per line.</li>
+<li>Line length should not exceed 80 or 100 characters.</li>
+<li>Test class must start with the name of the class they are testing followed by ‘Test’.</li> <li>E.g. ServerConfigurationTest.</li>
+<li>One character variable names should only be used in loops or for temporary variables.</li>
+</ul>
+<p>All of these could be easily justified in a black-and-white manner without the enforcer appearing like a dictator. On the other extreme, here are some so called “standards” that will rub developers the wrong way and prompt un-necessary debates:</p>
+<ul>
+<li>Class names must not end in -er. [Personal Opinion]</li>
+<li>Don’t use static fields or methods. [Personal Opinion]</li>
+<li>Aim for low Cohesion and High Coupling. [Recommendation. Cannot be enforced.]</li>
+<li>Use Test Driven Development. [Recommendation. Cannot be enforced.]</li>
+</ul>
+<p>There is a grey area between common sense guidelines and personal preferences such as whether to put braces on the same line or the next. Standardize if you must, but try to keep items in the grey area (generally formatting issues) to a bare minimum.</p>
+
+<h2>Effective Coding Standards</h2>
+<p>Let’s ask the question: why exactly do we need coding standards and what benefits do they offer? Most articles I found online draw a direct relationship between coding standards and software maintainability. While there is absolutely no doubt that source code that adheres to good standards is more readable and reflects harmony, there is another side of coding standards which is often overlooked at the expense of too much attention on aesthetics. Effective coding standards focus on techniques that highlight problems and make bugs stand-out and visible to everyone. Joel said it better in 2005:</p>
+
+<p>Look for coding conventions that make wrong code look wrong.</p>
+
+<p>In Java programming, having the following standards will help catch bugs early on and increase software quality:</p>
+
+<ul>
+  <li>Whenever your override equals() method, you must also override the hashCode() method.</li>
+<li>Do not compare strings using == or !=.</li>
+<li>Do not ignore exceptions that you caught.</li>
+<li>Do not catch broad exception classes like Exception or RuntimeException.</li>
+</ul>
+<p>To recap, effective coding standards:</p>
+<ul>
+<li>are short, simple and concise rules. They do not attempt to cover and processify everything and leave plenty of room for developers to exercise their own creativity.</li>
+<li>strike the right balance between formatting issues and issues that “make the wrong code look wrong”.</li>
+<li>are black and white instead of vague suggestions or recommendations.</li>
+</ul>
+<p>Coding standards, when used for the right reasons and in the right manner, offer many benefits. They make source code more readable and the software project more maintainable. They also help catch bugs and mistakes that are disguised as seemingly harmless code. While they might not catch all possible bugs, I’ll take something over nothing any day.</p>
+
+<p>Automate the Process of Checking Code Standards
+Once you have effective coding standards, you should automate the process of checking source code’s adherence to standards. It will save a lot of time in peer reviews and catch everything that humans might miss. There is an abundance of style checking tools available for all major programming languages. For our Java projects, we use a popular tool called Checkstyle which checks source code for style and design problems. It provides several Checks and by default, checks code against Sun’s conventions. Or you could choose Google’s coding standards, which I recommend. If you use IntelliJ IDEA (also highly recommended), there’s a checkstyle plugin that shows results right inside the IDE.</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="blogslist.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>This website is developed by GTCoding</p>
+        </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
